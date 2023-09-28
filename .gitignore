@@ -161,3 +161,4 @@ cython_debug/
 
 # ADDED my Giang
 .DS_Store
+.txt
