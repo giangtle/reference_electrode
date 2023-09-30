@@ -47,7 +47,7 @@ problem = {
     }
 
 # Generate samples
-param_values = sobol.sample(problem, 16)
+param_values = sobol.sample(problem, 400)
 
 # Save inputs to text file
 file_name = "./model_input/unchanged_inputs.txt"
