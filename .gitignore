@@ -166,5 +166,6 @@ cython_debug/
 COMSOL_job/*.mph
 COMSOL_job/*.status
 COMSOL_job/*.recovery
+old/*
 # not to upload simulation result
 simulation_result/*.txt
