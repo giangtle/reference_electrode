@@ -20,10 +20,10 @@ inputs = {
     "lambda": ([5, 40], "1"),
     "gamma": ([7, 17], "1"),
     "k": ([5, 25], "S/m"),
-    "kappa_1": ([1.0E-4, 1.0E-1], "1"),
+    "kappa_1": ([1.0E-5, 1.0E-2], "1"),
     "kappa_2": ([1.0E1, 1.0E3], "1"),
     "beta": ([0.75, 1], "1"),
-    "omega_bar": ([1.0E-3, 1.0E-1], "1"),
+    "omega_bar": ([1.0E-4, 1.0E-2], "1"),
     "chi": ([1.0E-2, 1.0E0], "1")
     }
 
@@ -60,4 +60,4 @@ file_name = "./model_input/inputs.txt"
 with open(file_name, "w") as f:
     f.write("\t".join(corrected_inputs.keys())+"\n")
     f.write("\t".join([unit for _, unit in corrected_inputs.values()])+"\n")
-    np.savetxt(f, param_values, fmt="%.3e", delimiter="\t")
+    np.savetxt(f, param_values, fmt="%.3g", delimiter="\t")

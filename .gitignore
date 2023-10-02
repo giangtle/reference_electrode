@@ -162,3 +162,9 @@ cython_debug/
 # ADDED my Giang
 .DS_Store
 .txt
+.temp
+COMSOL_job/*.mph
+COMSOL_job/*.status
+COMSOL_job/*.recovery
+# not to upload simulation result
+simulation_result/*.txt
