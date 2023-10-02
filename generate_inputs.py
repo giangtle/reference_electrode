@@ -18,7 +18,11 @@ unchanged_inputs = {
 inputs = {
     "L": ([20, 200],"um"),
     "lambda": ([5, 40], "1"),
+    ##############################################################
+    # If using COMSOL_model/iV_model.mph, comment out the line   #
+    # below, i.e. no gamma input                                 #
     "gamma": ([7, 17], "1"),
+    ##############################################################
     "k": ([5, 25], "S/m"),
     "kappa_1": ([1.0E-5, 1.0E-2], "1"),
     "kappa_2": ([1.0E1, 1.0E3], "1"),
@@ -47,7 +51,7 @@ problem = {
     }
 
 # Generate samples
-param_values = sobol.sample(problem, 400)
+param_values = sobol.sample(problem, 2**9)
 
 # Save inputs to text file
 file_name = "./model_input/unchanged_inputs.txt"
