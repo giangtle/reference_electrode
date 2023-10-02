@@ -18,7 +18,10 @@ current_dir = pwd;
 matlab_fcn_dir = append(current_dir, '/MATLAB_function');
 addpath(matlab_fcn_dir);
 
-% Open COMSOL model:
+% Open COMSOL model in ./COMSOL/ folder:
+%   _ EIS_model.mph: predicts the EIS response by both reference RHEs at a
+%     given voltage (gamma)
+%   _ iV_model.mph: predicts a polarization curves by both reference RHEs
 model_name = 'EIS_model.mph';
 model = mphopen(append('COMSOL/', model_name));
 
@@ -50,7 +53,6 @@ tic
 % Start simulation:
 for batch_i=(checkpoint/batch_size +1):loop_no+1
     % Open COMSOL model:
-    model_name = 'EIS_model.mph';
     model = mphopen(append('COMSOL/', model_name));
 
     model_input_begin = (batch_i-1)*batch_size+1;
@@ -81,19 +83,8 @@ for batch_i=(checkpoint/batch_size +1):loop_no+1
         fprintf(fid,'%g\t',params);
         %Write results:
         temp_model = mphopen(job_name);
-        % Get psi value
-        table2 = mphtable(temp_model, 'tbl2');
-        table2 = table2.data;
-        fprintf(fid,'%.4g\t', [table2(1,2); table2(1,3)]);
-        % Get psi11 value
-        table1 = mphtable(temp_model, 'tbl1');
-        table1 = table1.data;
-        psi_ref_o1 = table1(:,2).';
-        psi_ref_o2 = table1(:,3).';
-        i_Sigma = table1(:,4).';
-        fprintf(fid,'%.4g+%.4gj\t',[real(i_Sigma);imag(i_Sigma)]);
-        fprintf(fid,'%.4g+%.4gj\t',[real(psi_ref_o1);imag(psi_ref_o1)]);
-        fprintf(fid,'%.4g+%.4gj\t',[real(psi_ref_o2);imag(psi_ref_o2)]);
+        % Get COMSOL job result
+        extract_COMSOL_job_result(fid, model_name, temp_model)
         fprintf(fid,'\n');
         fclose(fid);
     end
