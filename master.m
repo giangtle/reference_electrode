@@ -22,7 +22,7 @@ addpath(matlab_fcn_dir);
 %   _ EIS_model.mph: predicts the EIS response by both reference RHEs at a
 %     given voltage (gamma)
 %   _ iV_model.mph: predicts a polarization curves by both reference RHEs
-model_name = 'EIS_model.mph';
+model_name = 'iV_model.mph';
 model = mphopen(append('COMSOL/', model_name));
 
 % Pass the unchanged input:
