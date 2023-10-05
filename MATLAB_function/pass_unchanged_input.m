@@ -1,4 +1,4 @@
-function pass_unchanged_input(model)
+function model = pass_unchanged_input(model)
 % Pass the unchanged input:
 fid=fopen('./model_input/unchanged_inputs.txt','r');
 param_names = strsplit(fgetl(fid),"\t");

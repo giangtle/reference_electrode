@@ -26,7 +26,8 @@ model_name = 'EIS_model.mph';
 model = mphopen(append('COMSOL/', model_name));
 
 % Pass the unchanged input:
-pass_unchanged_input(model);
+model = pass_unchanged_input(model);
+model.save(append(current_dir,'/COMSOL/', model_name));
 
 % Get the model input:
 [param_names, unit_names, params_matrix] = read_input_file();
