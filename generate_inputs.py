@@ -12,23 +12,24 @@ import numpy as np
 
 unchanged_inputs = {
     "w_elec": ([1.342],"cm"),
-    "phi_star": ([30.42], "mV"),
     }
 
 inputs = {
     "L": ([20, 200],"um"),
     "lambda": ([5, 40], "1"),
+    "phi_star": ([15.21, 30.42], "mV"),
+    "k": ([5, 25], "S/m"),
+    "kappa_1": ([1.0E-5, 1.0E-3], "1"),
+    "kappa_2": ([1.0E1, 1.0E3], "1"),
+    "theta": ([0.25, 5], "1"),
     ##############################################################
     # If using COMSOL_model/iV_model.mph, comment out the lines  #
     # below, i.e. no gamma, beta, chi, omega_bar inputs          #
-    "gamma": ([7, 17], "1"),
+    #"gamma": ([7, 17], "1"),
     "beta": ([0.75, 1], "1"),
-    "omega_bar": ([1.0E-4, 1.0E-2], "1"),
+    "omega_bar": ([1.0E-4, 1.0E-2], "Hz"),
     "chi": ([1.0E-2, 1.0E0], "1"),
     ##############################################################
-    "k": ([5, 25], "S/m"),
-    "kappa_1": ([1.0E-5, 1.0E-2], "1"),
-    "kappa_2": ([1.0E1, 1.0E3], "1"),
     }
 
 #log adjustment
