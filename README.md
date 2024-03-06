@@ -1,6 +1,6 @@
 # reference_electrode
 
-The [folder](/COMSOL/)(/COMSOL/) contains several dimensionless COMSOL models to simulate the response of reference electrode with a misaligned anode-cathode (both anode overhang and cathode overhang). Though the parameters are relevant for PEM electrolysis, minor modification can be made to convert it to PEM fuel cell or solid oxide fuel cell.
+The [folder](/COMSOL/)(/COMSOL/) contains several dimensionless COMSOL models to simulate the response of reference electrode with a misaligned anode-cathode (both anode overhang and cathode overhang). Though the parameters are relevant for PEM electrolysis, minor modification can be made to convert it to PEM fuel cell or solid oxide fuel cell. The detail of model is described here in my [thesis](http://dx.doi.org/10.1149/1.1634272) - Simulation Informed Machine Learning Interpretation of Electrochemical Measurements.
 
 1. **iV_model.mph:** 4-electrode polarization curves.
 2. **EIS_model_current_control.mph:** 4-electrode EIS with current input.
